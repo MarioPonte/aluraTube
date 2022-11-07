@@ -2,6 +2,7 @@
     "name": "Mário Ponte",
     "job": "Web Developer",
     "github": "MarioPonte",
+    "banner": "https://images.unsplash.com/photo-1585881728919-5c0ce925ad10?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     "playlists": {
         "jogos": [
             {
@@ -129,5 +130,12 @@
                 "thumb": "https://img.youtube.com/vi/0JWMVc1CqpA/hqdefault.jpg"
             }
         ]
-    }
+    },
+    "favorites": [
+        {
+            "name": "RicFazeres",
+            "profilePicture": "https://yt3.ggpht.com/ytc/AMLnZu_ecI1rFcCsSGGM1oc7aqpEDWpTM8EpNPewK-LeEA=s88-c-k-c0x00ffffff-no-rj",
+            "url": "https://www.youtube.com/watch?v=0JWMVc1CqpA"
+        }
+    ]
 }

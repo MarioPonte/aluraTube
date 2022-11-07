@@ -21,6 +21,7 @@ function HomePage() {
                 <Menu />
                 <Header />
                 <Timeline playlists={config.playlists} />
+                <Favorites favorites={config.favorites} />
             </div>
         </>
     )
@@ -41,18 +42,28 @@ const StyledHeader = styled.div`
         border-radius: 50%;
     }
     .user-info{
-        margin-top: 50px;
+        margin-top: 10px;
         display:flex;
         align-items: center;
         width: 100%;
         padding: 16px 32px;
         gap: 16px;
     }
+    .user-banner{
+        margin-top: 50px;
+        height: 260px;
+        background: url(${config.banner}) center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
 `;
 function Header() {
     return (
         <StyledHeader>
-            {/* <img src="banner" /> */}
+            <section className="user-banner">
+            </section>
             <section className="user-info">
                 <img src={`https://github.com/${config.github}.png`} />
                 <div>
@@ -96,6 +107,36 @@ function Timeline(props) {
                 )
             })}
         </StyledTimeline>
+    )
+}
+
+function Favorites(props) {
+    const favoritesNames = Object.keys(props.favorites);
+
+    return (
+        <div>
+            {favoritesNames.map((favoriteName) => {
+                const profiles = props.favorites[favoriteName];
+                return (
+                    <section key={favoriteName}>
+                        <h2>Favorites</h2>
+                        <div>
+                            
+                            {/* {profiles.map((profile) => {
+                                return (
+                                    <a key={profile.url} href={profile.url}>
+                                        <img src={profile.profilePicture} />
+                                        <span>
+                                            {profile.name}
+                                        </span>
+                                    </a>
+                                )
+                            })} */}
+                        </div>
+                    </section>
+                )
+            })}
+        </div>
     )
 }
 
