@@ -131,11 +131,18 @@
             }
         ]
     },
-    "favorites": [
-        {
-            "name": "RicFazeres",
-            "profilePicture": "https://yt3.ggpht.com/ytc/AMLnZu_ecI1rFcCsSGGM1oc7aqpEDWpTM8EpNPewK-LeEA=s88-c-k-c0x00ffffff-no-rj",
-            "url": "https://www.youtube.com/watch?v=0JWMVc1CqpA"
-        }
-    ]
+    "favorites":{
+        "Favorites": [
+            {
+                "title": "Mário Souto",
+                "url": "https://github.com/omariosouto",
+                "thumb": "https://github.com/omariosouto.png"
+            },
+            {
+                "title": "Mário Ponte",
+                "url": "https://github.com/MarioPonte",
+                "thumb": "https://github.com/MarioPonte.png"
+            }
+        ]
+    }
 }

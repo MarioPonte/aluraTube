@@ -2,7 +2,8 @@ import React from "react";
 import config from "../config.json";
 import styled from "styled-components";
 import Menu from "../src/components/Menu";
-import { StyledTimeline } from '../src/components/Timeline'
+import { StyledTimeline } from '../src/components/Timeline';
+import { StyledFavorite } from '../src/components/Favorite';
 
 function HomePage() {
     const [valorDoFiltro, setValorDoFiltro] = React.useState("");
@@ -19,7 +20,7 @@ function HomePage() {
                 <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
                 <Header />
                 <Timeline searchValue={valorDoFiltro} playlists={config.playlists} />
-                <Favorites favorites={config.favorites} />
+                <Favorite favorites = {config.favorites}/>
             </div>
         </>
     )
@@ -86,6 +87,7 @@ function Timeline({searchValue, ...props}) {
         <StyledTimeline>
             {playlistNames.map((playlistName) => {
                 const videos = props.playlists[playlistName];
+                let countVideos = 0;
                 // console.log(playlistName);
                 // console.log(videos);
                 return (
@@ -99,6 +101,7 @@ function Timeline({searchValue, ...props}) {
                                 return titleNormalized.includes(searchValueNormalized)
                             })
                             .map((video) => {
+                                countVideos = countVideos + 1;
                                 return (
                                     <a key={video.url} href={video.url}>
                                         <img src={video.thumb} />
@@ -108,6 +111,7 @@ function Timeline({searchValue, ...props}) {
                                     </a>
                                 )
                             })}
+                            {countVideos === 0 ? "Nenhum video encontrado" : ""}
                         </div>
                     </section>
                 )
@@ -116,34 +120,37 @@ function Timeline({searchValue, ...props}) {
     )
 }
 
-function Favorites(props) {
-    const favoritesNames = Object.keys(props.favorites);
+function Favorite (props) {
+    const favoriteNames = Object.keys(props.favorites)
+    return(
+    <div>
+        {favoriteNames.map((favoriteName) => {
+            const videos = props.favorites[favoriteName];
+            return (
+                <section key={favoriteName}>
+                    <StyledFavorite>
+                        <h2>
+                            {favoriteName}
+                        </h2>
 
-    return (
-        <div>
-            {favoritesNames.map((favoriteName) => {
-                const profiles = props.favorites[favoriteName];
-                return (
-                    <section key={favoriteName}>
-                        <h2>Favorites</h2>
-                        <div>
-                            
-                            {/* {profiles.map((profile) => {
-                                return (
-                                    <a key={profile.url} href={profile.url}>
-                                        <img src={profile.profilePicture} />
-                                        <span>
-                                            {profile.name}
-                                        </span>
+                        {videos.map( (profile)=>{
+                            return(
+                                    <a className="profileLink" key={profile.url} href={profile.url}>
+                                        <div>
+                                            <img className="profilePicture" src={profile.thumb}/>
+                                        </div>
+                                        <span>{profile.title}</span>
                                     </a>
                                 )
-                            })} */}
-                        </div>
-                    </section>
-                )
-            })}
-        </div>
+                            }
+                        )}
+                        
+                    </StyledFavorite>
+                </section>
+            )
+        })}
+    </div>
     )
-}
+  }
 
 export default HomePage
