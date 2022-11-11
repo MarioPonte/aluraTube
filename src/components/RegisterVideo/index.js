@@ -2,6 +2,8 @@ import React from "react";
 import { StyledRegisterVideo } from "./styles";
 import { createClient } from "@supabase/supabase-js";
 
+import config from "../../../config.json";
+
 // Custom Hook
 function useForm(propsDoForm){
     const [values, setValues] = React.useState(propsDoForm.initialValues);
@@ -33,9 +35,11 @@ function getThumbnail(url){
 
 export default function RegisterVideo() {
     const formCadastro = useForm({
-        initialValues: { titulo: "Frost Punk", url: "https://www.youtube.com/watch?v=QsqatJxAUtk"}
+        initialValues: { titulo: "", url: ""}
     });
     const [formVisivel, setFormVisivel] = React.useState(false);
+
+    const playlistNames = Object.keys(config.playlists);
 
     return (
         <StyledRegisterVideo>
@@ -46,7 +50,7 @@ export default function RegisterVideo() {
                 ? (
                     <form onSubmit={(evento) => {
                         evento.preventDefault();
-                        console.log(formCadastro.values);
+                        //console.log(formCadastro.values);
 
                         // Contrato entre o nosso front e backend
                         supabase.from("video").insert({
@@ -55,8 +59,8 @@ export default function RegisterVideo() {
                             thumb: getThumbnail(formCadastro.values.url),
                             playlist: "jogos",
                         })
-                        .then((oqueveio) => {
-                            console.log(oqueveio);
+                        .then((insResponse) => {
+                            console.log(insResponse);
                         })
                         .catch((err) => {
                             console.log(err);
@@ -79,6 +83,15 @@ export default function RegisterVideo() {
                                 name="url"
                                 value={formCadastro.values.url}
                                 onChange={formCadastro.handleChange} />
+
+                            <select name="playlist" onChange={formCadastro.handleChange}>
+                                <option key="Add Novos" value="Add Novos">Novos</option>
+                                {playlistNames.map((playlistName) => {
+                                    return (
+                                        <option key={playlistName} value={playlistName}>{playlistName}</option>
+                                    )
+                                })}
+                            </select>
                             <button type="submit">
                                 Cadastrar
                             </button>

@@ -12,10 +12,10 @@ function HomePage() {
     const [playlists, setPlaylists] = React.useState({});
 
     React.useEffect(() => {
-        console.log("useEffect");
+        //console.log("useEffect");
         service.getAllVideos()
             .then((dados) => {
-                console.log(dados.data);
+                //console.log(dados.data);
                 const novasPlaylists = {...playlists};
                 dados.data.forEach((video) => {
                     if(!novasPlaylists[video.playlist]) novasPlaylists[video.playlist] = [];
@@ -25,7 +25,7 @@ function HomePage() {
             });
     }, []);
 
-    console.log("Playlists pronto",playlists);
+    //console.log("Playlists pronto",playlists);
 
     return (
         <>
@@ -41,6 +41,7 @@ function HomePage() {
                 {/* config.playlists */}
                 <Timeline searchValue={valorDoFiltro} playlists={playlists} />
                 <Favorite favorites = {config.favorites}/>
+                <Footer />
             </div>
         </>
     )
@@ -171,6 +172,23 @@ function Favorite (props) {
         })}
     </div>
     )
-  }
+}
+
+const StyledFooter = styled.div`
+    background-color: ${({ theme }) => theme.backgroundLevel1};
+    text-align: center;
+
+    footer{
+        margin: 40px;
+        font-size: 12px;
+    }
+`;
+function Footer() {
+    return (
+        <StyledFooter>
+            <footer>Feito por Mário Ponte durante o evento Imersão React da plataforma Alura © 2022</footer>
+        </StyledFooter>
+    )
+}
 
 export default HomePage

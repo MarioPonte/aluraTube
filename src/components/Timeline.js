@@ -1,6 +1,29 @@
 import styled from "styled-components";
 
 export const StyledTimeline = styled.div`
+
+   /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #b3b2b3 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+    height: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background-color: ${({ theme }) => theme.background};
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.backgroundLevel2};
+    border-radius: 100vw;
+  }
+
   flex: 1;
   width: 100%;
   padding: 16px;

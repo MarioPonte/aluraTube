@@ -2,6 +2,7 @@ import React from "react";
 import { ThemeProvider } from "styled-components";
 import { CSSReset } from "../src/components/CSSReset";
 import ColorModeProvider, { ColorModeContext } from "../src/components/Menu/components/ColorMode";
+import Head from 'next/head';
 import RegisterVideo from "../src/components/RegisterVideo";
 
 const theme = {
@@ -39,6 +40,12 @@ function Root({ Component, pageProps }) {
     return (
             <ThemeProvider theme={theme[contexto.mode]}>
                 <CSSReset />
+
+                <Head>
+                    <title>aluraTube</title>
+                    <link rel="icon" href="https://www.youtube.com/s/desktop/233efd8f/img/favicon.ico" />
+                </Head>
+
                 <Component {...pageProps} />
                 <RegisterVideo />
             </ThemeProvider>
