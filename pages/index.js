@@ -4,9 +4,28 @@ import styled from "styled-components";
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from '../src/components/Timeline';
 import { StyledFavorite } from '../src/components/Favorite';
+import { videoService } from "../src/services/videoService";
 
 function HomePage() {
+    const service = videoService();
     const [valorDoFiltro, setValorDoFiltro] = React.useState("");
+    const [playlists, setPlaylists] = React.useState({});
+
+    React.useEffect(() => {
+        console.log("useEffect");
+        service.getAllVideos()
+            .then((dados) => {
+                console.log(dados.data);
+                const novasPlaylists = {...playlists};
+                dados.data.forEach((video) => {
+                    if(!novasPlaylists[video.playlist]) novasPlaylists[video.playlist] = [];
+                    novasPlaylists[video.playlist].push(video);
+                })
+                setPlaylists(novasPlaylists);
+            });
+    }, []);
+
+    console.log("Playlists pronto",playlists);
 
     return (
         <>
@@ -19,7 +38,8 @@ function HomePage() {
                 {/* Prop Drilling */}
                 <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
                 <Header />
-                <Timeline searchValue={valorDoFiltro} playlists={config.playlists} />
+                {/* config.playlists */}
+                <Timeline searchValue={valorDoFiltro} playlists={playlists} />
                 <Favorite favorites = {config.favorites}/>
             </div>
         </>
