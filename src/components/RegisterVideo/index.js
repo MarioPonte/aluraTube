@@ -57,10 +57,11 @@ export default function RegisterVideo() {
                             title: formCadastro.values.titulo,
                             url: formCadastro.values.url,
                             thumb: getThumbnail(formCadastro.values.url),
-                            playlist: "jogos",
+                            playlist: formCadastro.values.playlist,
                         })
                         .then((insResponse) => {
                             console.log(insResponse);
+                            window.location.reload();
                         })
                         .catch((err) => {
                             console.log(err);
@@ -71,7 +72,7 @@ export default function RegisterVideo() {
                     }}>
                         <div>
                             <button type="button" className="close-modal" onClick={() => { setFormVisivel(false) }}>
-                                X
+                                x
                             </button>
                             <input
                                 placeholder="Titulo do video"
