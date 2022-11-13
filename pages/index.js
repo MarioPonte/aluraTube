@@ -5,6 +5,7 @@ import Menu from "../src/components/Menu";
 import { StyledTimeline } from '../src/components/Timeline';
 import { StyledFavorite } from '../src/components/Favorite';
 import { videoService } from "../src/services/videoService";
+import Link from "next/link";
 
 function HomePage() {
     const service = videoService();
@@ -123,14 +124,29 @@ function Timeline({searchValue, ...props}) {
                             })
                             .map((video) => {
                                 countVideos = countVideos + 1;
-                                return (
-                                    <a key={video.url} href={video.url}>
-                                        <img src={video.thumb} />
-                                        <span>
-                                            {video.title}
-                                        </span>
-                                    </a>
-                                )
+                                let idVideo;
+                                    const linkFormat =
+                                      /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+                                    const match = video.url.match(linkFormat);
+                                    if (match && match[2].length == 11) {
+                                        idVideo = match[2];
+                                    }
+                                    return (
+                                        <Link 
+                                        key={video.url} 
+                                        href={{
+                                            pathname: "/video",
+                                            query: {
+                                                v: idVideo,
+                                                title: video.title,
+                                            },
+                                        }}>
+                                            <img src={video.thumb} />
+                                            <span>
+                                                {video.title}
+                                            </span>
+                                        </Link>
+                                    )
                             })}
                             {countVideos === 0 ? "Nenhum video encontrado" : ""}
                         </div>

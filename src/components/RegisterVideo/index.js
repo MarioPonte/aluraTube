@@ -81,15 +81,16 @@ export default function RegisterVideo() {
                                 placeholder="Titulo do video"
                                 name="titulo"
                                 value={formCadastro.values.titulo}
-                                onChange={formCadastro.handleChange} />
+                                onChange={formCadastro.handleChange}
+                                required />
                             <input
                                 placeholder="URL"
                                 name="url"
                                 value={formCadastro.values.url}
-                                onChange={formCadastro.handleChange} />
+                                onChange={formCadastro.handleChange}
+                                required />
 
                             <select name="playlist" onChange={formCadastro.handleChange}>
-                                <option key="Add Novos" value="Add Novos">Novos</option>
                                 {playlistNames.map((playlistName) => {
                                     return (
                                         <option key={playlistName} value={playlistName}>{playlistName}</option>

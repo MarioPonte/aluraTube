@@ -11,7 +11,7 @@
 
 **AluraTube** was a project I created during the "React Immersion" event of the [**Alura**](https://www.alura.com.br) learning platform. The event allowed me to have a deeper contact with the React.js technology, so that I could then create this project that is a clone of the Youtube page.
 
-This project was developed under the guidance of instructor [Mario Souto](https://github.com/omariosouto) with the participation of developer [Nayanne Lopes](https://github.com/NayanneBatista) and Alura's CEO, [Paulo Silveira](https://github.com/peas).
+This project was developed under the guidance of instructor [Mário Souto](https://github.com/omariosouto) with the participation of developer [Nayanne Lopes](https://github.com/NayanneBatista) and Alura's CEO, [Paulo Silveira](https://github.com/peas).
 
 ## 🔨 Tools
 
