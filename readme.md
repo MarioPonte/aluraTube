@@ -37,4 +37,4 @@ First you need to have `nodejs` installed.
 
 ## 📜 License
 
-AluraTube is under the MIT License. See the file [LICENSE](https://github.com/MarioPonte/SpaceBox/blob/main/LICENSE) for more details.
+AluraTube is under the MIT License. See the file [LICENSE](https://github.com/MarioPonte/aluraTube/blob/main/LICENSE) for more details.
