@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from 'next/router';
 import { StyledRegisterVideo } from "./styles";
 import { createClient } from "@supabase/supabase-js";
 
@@ -41,6 +42,8 @@ export default function RegisterVideo() {
 
     const playlistNames = Object.keys(config.playlists);
 
+    const router = useRouter();
+
     return (
         <StyledRegisterVideo>
             <button className="add-video" onClick={() => { setFormVisivel(true) }}>
@@ -61,7 +64,7 @@ export default function RegisterVideo() {
                         })
                         .then((insResponse) => {
                             console.log(insResponse);
-                            window.location.reload();
+                            router.reload()
                         })
                         .catch((err) => {
                             console.log(err);

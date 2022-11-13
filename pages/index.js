@@ -178,6 +178,10 @@ const StyledFooter = styled.div`
     background-color: ${({ theme }) => theme.backgroundLevel1};
     text-align: center;
 
+    .companyLink{
+        color: white;
+    }
+
     footer{
         margin: 40px;
         font-size: 12px;
@@ -186,7 +190,7 @@ const StyledFooter = styled.div`
 function Footer() {
     return (
         <StyledFooter>
-            <footer>Feito por Mário Ponte durante o evento Imersão React da plataforma Alura © 2022</footer>
+            <footer>Feito por <a className="companyLink" href="https://marioponte.github.io/Portfolio/" target="_Blank">Mário Ponte</a> durante o evento Imersão React da plataforma <a className="companyLink" href="https://www.alura.com.br/" target="_Blank">Alura</a> © 2022</footer>
         </StyledFooter>
     )
 }
