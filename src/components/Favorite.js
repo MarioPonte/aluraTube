@@ -16,7 +16,6 @@ export const StyledFavorite = styled.div`
         text-decoration: none;
         color: ${({ theme }) => theme.textColorBase };
         display: inline-block;
-        width: 100px;
         margin: 16px;
     }
 `;

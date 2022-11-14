@@ -172,7 +172,7 @@ function Favorite (props) {
 
                         {videos.map( (profile)=>{
                             return(
-                                    <a className="profileLink" key={profile.url} href={profile.url}>
+                                    <a className="profileLink" key={profile.url} href={profile.url} target="_Blank">
                                         <div>
                                             <img className="profilePicture" src={profile.thumb}/>
                                         </div>
@@ -195,7 +195,7 @@ const StyledFooter = styled.div`
     text-align: center;
 
     .companyLink{
-        color: white;
+        color: ${({ theme }) => theme.textColorBase};
     }
 
     footer{

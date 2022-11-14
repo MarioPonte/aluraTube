@@ -30,7 +30,9 @@ const supabase = createClient(PROJECT_URL, PUBLIC_KEY);
 
 // get youtube thumbnail from video url
 function getThumbnail(url){
-    return `https://img.youtube.com/vi/${url.split("v=")[1]}/hqdefault.jpg`;
+    const youTubeId = url.replace(/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/, '$7');
+    const thumbnail = `https://img.youtube.com/vi/${youTubeId}/hqdefault.jpg`;
+    return thumbnail;
 }
 
 
@@ -90,16 +92,22 @@ export default function RegisterVideo() {
                                 onChange={formCadastro.handleChange}
                                 required />
 
-                            <select name="playlist" onChange={formCadastro.handleChange}>
+                            <select name="playlist" defaultValue="" onChange={formCadastro.handleChange} required>
+                                <option value="" disabled>
+                                    Selecione uma playlist...
+                                </option>
                                 {playlistNames.map((playlistName) => {
                                     return (
                                         <option key={playlistName} value={playlistName}>{playlistName}</option>
                                     )
                                 })}
                             </select>
+
                             <button type="submit">
                                 Cadastrar
                             </button>
+
+                            {formCadastro.values.url.length > 11 ? <> <img className="thumbPreview" src={getThumbnail(formCadastro.values.url)}  /> </>  : null }
                         </div>
                     </form>
                 )

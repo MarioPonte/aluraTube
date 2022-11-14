@@ -7,6 +7,7 @@ const StyledVideoPlayer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     margin: 20px;
     flex: 1;
     div {
@@ -26,6 +27,11 @@ const StyledVideoPlayer = styled.div`
         border: none;
         margin-bottom: 5px;
     }
+
+    .backButton{
+        color: ${({ theme }) => theme.textColorBase};
+        margin: 20px;
+    }
 `;
 
 const VideoPlayer = () => {
@@ -42,6 +48,7 @@ const VideoPlayer = () => {
                 ></iframe>
                 <h2 className="title">{router.query.title}</h2>
             </div>
+            <a className="backButton" href="/">Voltar á página inicial</a>
         </StyledVideoPlayer>
     )
 }

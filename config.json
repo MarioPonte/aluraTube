@@ -93,7 +93,7 @@
                 "thumb": "https://img.youtube.com/vi/d9c0r-J6CdM/hqdefault.jpg"
             }
         ],
-        "back-end": [
+        "programação": [
             {
                 "title": "Node JS: Construindo CRUDs com file system focando em serialização e JSON",
                 "url": "https://www.youtube.com/watch?v=dvd3pNYh7So",
@@ -134,12 +134,22 @@
     "favorites":{
         "Favorites": [
             {
-                "title": "Mário Souto",
+                "title": "@omariosouto",
                 "url": "https://github.com/omariosouto",
                 "thumb": "https://github.com/omariosouto.png"
             },
             {
-                "title": "Mário Ponte",
+                "title": "@peas",
+                "url": "https://github.com/peas",
+                "thumb": "https://github.com/peas.png"
+            },
+            {
+                "title": "@NayanneBatista",
+                "url": "https://github.com/NayanneBatista",
+                "thumb": "https://github.com/NayanneBatista.png"
+            },
+            {
+                "title": "@MarioPonte",
                 "url": "https://github.com/MarioPonte",
                 "thumb": "https://github.com/MarioPonte.png"
             }
