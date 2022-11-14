@@ -6,7 +6,7 @@ import VideoPlayer from "../src/components/videoPlayer";
 const StyledVideo = styled.div`
     display: flex;
     flex-direction: column;
-    flex: 1;
+    flex: 100vw;
 `;
 
 const Video = () => {

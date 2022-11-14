@@ -11,14 +11,13 @@ const StyledVideoPlayer = styled.div`
     margin: 20px;
     flex: 1;
     div {
-        width: 50%;
+        width: 50vw;
         background-color: ${({ theme }) => theme.backgroundLevel1};
         padding: 20px;
         border-radius: 20px;
     }
     .title {
         padding: 10px;
-        width: 896px;
         background-color: ${({ theme }) => theme.backgroundLevel2};
         border-radius:10px;
     }
@@ -26,6 +25,7 @@ const StyledVideoPlayer = styled.div`
         border-radius: 20px;
         border: none;
         margin-bottom: 5px;
+        width: 45vw;
     }
 
     .backButton{
