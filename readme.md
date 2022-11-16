@@ -23,7 +23,7 @@ This project was developed under the guidance of instructor [Mário Souto](https
 
 ## 📝 How to contribute
 
-First you need to have `nodejs` installed.
+First you need to have `Git` and `nodejs` installed on your machine.
 
 ```bash
     # Clone the project
