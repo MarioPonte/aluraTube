@@ -7,18 +7,18 @@ import RegisterVideo from "../src/components/RegisterVideo";
 
 const theme = {
     light: {
-        backgroundBase: "#f9f9f9",
-        backgroundLevel1: "#ffffff",
-        backgroundLevel2: "#f0f0f0",
-        borderBase: "#e5e5e5",
-        textColorBase: "#222222",
+        backgroundBase: "#D5F0FF",
+        backgroundLevel1: "#E6F6FF",
+        backgroundLevel2: "#A5DFFF",
+        borderBase: "#A5DFFF",
+        textColorBase: "#001520",
     },
     dark: {
-        backgroundBase: "#181818",
-        backgroundLevel1: "#202020",
-        backgroundLevel2: "#313131",
-        borderBase: "#383838",
-        textColorBase: "#FFFFFF",
+        backgroundBase: "#001520",
+        backgroundLevel1: "#001C2C",
+        backgroundLevel2: "#002B43",
+        borderBase: "#002B43",
+        textColorBase: "#D5F0FF",
     }
 };
 

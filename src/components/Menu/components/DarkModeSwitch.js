@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ColorModeContext } from "./ColorMode";
 
 const StyledSwitch = styled.div`
-  background-color: #333333;
+  background-color: #002B43;
   border: 0;
   padding: 3px;
   font-size: 12px;
@@ -21,7 +21,7 @@ const StyledSwitch = styled.div`
   label:before {
     content: "";
     background-color: #fafafa;
-    border: 1px solid #333333;
+    border: 1px solid #002B43;
     width: 24px;
     height: 24px;
     border-radius: 100%;

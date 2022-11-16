@@ -86,6 +86,7 @@ export default function RegisterVideo() {
                                 onChange={formCadastro.handleChange}
                                 required />
                             <input
+                                type="url"
                                 placeholder="URL"
                                 name="url"
                                 value={formCadastro.values.url}
