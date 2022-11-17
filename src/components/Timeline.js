@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledTimeline = styled.div`
 
-   /* ===== Scrollbar CSS ===== */
+  /* ===== Scrollbar CSS ===== */
   /* Firefox */
   * {
     scrollbar-width: auto;

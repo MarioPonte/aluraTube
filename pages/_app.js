@@ -43,7 +43,7 @@ function Root({ Component, pageProps }) {
 
                 <Head>
                     <title>aluraTube</title>
-                    <link rel="icon" href="https://www.youtube.com/s/desktop/233efd8f/img/favicon.ico" />
+                    <link rel="icon" href="/images/aluratubeIcon.ico" />
                 </Head>
 
                 <Component {...pageProps} />
